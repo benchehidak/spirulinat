@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import ProductCardVertical from '@/components/ProductCard';
 // import { Container, CircularProgress } from '@mui/material';
 // import ProductCard from './ProductCard'; // Adjust the import based on your file structure
 // import ProductGrid from '../components/ProductGrid';
@@ -81,11 +82,12 @@ export default function Home() {
 
         <div className="mt-12">
           <h2 className="text-3xl font-semibold text-gray-900 dark:text-white text-center">Meilleurs produits</h2>
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap mt-4 justify-center gap-6">
             {/* {listings.map((listing) => (
               <ProductCard key={listing.id} product={listing} />
             ))} */}
             {/* <ProductGrid/> */}
+            <ProductCardVertical/>
           </div>
         </div>
       </div>
