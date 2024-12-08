@@ -30,7 +30,7 @@ const Cart = ({
 
     return (
       <>
-        <section className="mt-50 mb-50">
+        <section className="mt-50 mb-50 text-white">
           <div className="container">
             <div
               className="row"

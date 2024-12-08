@@ -4,5 +4,6 @@ import { Provider } from "react-redux";
 import store from "@/redux/store";
 
 export default function StoreProvider({ children }) {
+    console.log("store", store);
     return <Provider store={store}>{children}</Provider>;
     }
