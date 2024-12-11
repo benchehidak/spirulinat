@@ -30,7 +30,7 @@ export default function Produits() {
             variant="h2" 
             component="h1" 
             className="mb-4 font-extrabold" 
-            style={{ fontFamily: 'Poppins, sans-serif', color: '#FFFFFF' }} >
+            style={{ fontFamily: 'Poppins, sans-serif', color: '#FFFFFF', fontSize: 'clamp(40px, 8vw, 60px)' }} >
             LES LABORATOIRES <span className="font-bold">SPIRUNAT</span>
           </Typography>
           <Typography 

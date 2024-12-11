@@ -1,11 +1,22 @@
 "use client";
-import Link  from 'next/link';
-// import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
-//   const { currentUser } = useSelector((state) => state.user);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // Check if viewport is mobile size
+      if (window.innerWidth >= 768) setIsMenuOpen(false); // Close menu if switching to desktop
+    };
+
+    handleResize(); // Set initial state
+    window.addEventListener('resize', handleResize); // Update on resize
+
+    return () => window.removeEventListener('resize', handleResize); // Cleanup listener
+  }, []);
 
   return (
     <header className="bg-gradient-to-b from-[#0f1d16] via-[#0f1d16]/90 to-transparent h-20 sticky top-0 left-0 w-full z-10">
@@ -17,11 +28,17 @@ export default function Navbar() {
             alt="Logo"
           />
         </Link>
+        <div className="flex-grow mx-4">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="w-full h-10 p-2 rounded-md bg-white text-black"
+          />
+        </div>
 
-        {/* Hamburger Menu for Small Screens */}
         <button
           className="text-white md:hidden"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen((prev) => !prev)}
         >
           <svg
             className="w-6 h-6"
@@ -39,10 +56,9 @@ export default function Navbar() {
           </svg>
         </button>
 
-        {/* Navigation Links */}
         <ul
           className={`${
-            isMenuOpen ?   "hidden":"block"
+            isMobile && !isMenuOpen ? "hidden" : "block"
           } md:flex gap-8 absolute md:static bg-[#0f1d16] md:bg-transparent top-20 left-0 w-full md:w-auto p-4 md:p-0 transition-all duration-300`}
         >
           <Link href="/produits">
@@ -70,24 +86,14 @@ export default function Navbar() {
               A propos
             </li>
           </Link>
-
-          {/* {currentUser ? (
-            <Link href="/profile">
-              <img
-                className="rounded-full h-9 w-9 object-cover transition-transform duration-300 hover:scale-110"
-                src={currentUser.avatar}
-                alt="profile"
-              />
-            </Link>
-          ) : ( */}
-            <Link href="/profile">
-              <li className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg transition-all duration-300 hover:scale-125 text-white font-bold">
-                Sign in
-              </li>
-            </Link>
-          {/* )} */}
+          <Link href="/profile">
+            <li className="relative flex flex-col items-center justify-center overflow-hidden rounded-lg transition-all duration-300 hover:scale-125 text-white font-bold">
+              Sign in
+            </li>
+          </Link>
         </ul>
       </div>
     </header>
   );
 }
+

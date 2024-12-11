@@ -45,7 +45,7 @@ const LoanForm = () => {
             variant="h2" 
             component="h1" 
             className="mb-4 font-extrabold" 
-            style={{ fontFamily: 'Poppins, sans-serif', color: '#FFFF00' }} >
+            style={{ fontFamily: 'Poppins, sans-serif', color: '#FFFF00' , fontSize: 'clamp(40px, 8vw, 60px)'}} >
             LES LABORATOIRES <span className="font-bold">SPIRUNAT</span>
           </Typography>
           <Typography 

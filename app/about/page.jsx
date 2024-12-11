@@ -6,13 +6,17 @@ import { AccountBalance, People, ContactMail, Visibility } from '@mui/icons-mate
 export default function about() {
   return (
     <div className="min-h-screen bg-cover bg-center bg-fixed">
-      <Container className="bg-white bg-opacity-0 p-8 rounded-lg shadow-2xl max-w-6xl mt-0 mb-10">
+      <Container className="bg-opacity-0 p-8 rounded-lg shadow-2xl max-w-6xl mt-0 mb-10">
         <div className="text-center mb-12 mt-0 px-4">
           <Typography 
             variant="h2" 
             component="h1" 
             className="mb-4 font-extrabold" 
-            style={{ fontFamily: 'Poppins, sans-serif', color: '#FFFFFF' }} >
+            style={{ 
+              fontFamily: 'Poppins, sans-serif', 
+              color: '#FFFFFF',
+              fontSize: 'clamp(40px, 8vw, 60px)'
+              }} >
             LES LABORATOIRES <span className="font-bold">SPIRUNAT</span>
           </Typography>
           <Typography 

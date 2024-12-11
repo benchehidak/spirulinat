@@ -9,7 +9,7 @@ export default function Expertise() {
         variant="h2" 
         component="h1" 
         className="mb-4 font-extrabold text-white" 
-        style={{ fontFamily: 'Poppins, sans-serif' }}
+        style={{ fontFamily: 'Poppins, sans-serif', fontSize: 'clamp(40px, 8vw, 60px)' }}
       >
         LES LABORATOIRES <span className="font-bold">SPIRUNAT</span>
       </Typography>

@@ -45,7 +45,7 @@ export default function Home() {
     >
       <div className="bg-slate-200 p-8 rounded-lg shadow-xl max-w-6xl mt-0 mb-10 bg-opacity-0 mx-auto">
         <div className="text-center mb-10 mt-0">
-        <div className="w-[300px] h-[50px] bg-blue-500 border-2 border-black absolute top-20 right-6"></div>
+        {/* <div className="w-[300px] h-[50px] bg-blue-500 border-2 border-black absolute top-20 right-6"></div> */}
         <h1 className="text-gray-900 dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
             L'énergie de la nature,
             <br /> au service de votre bien-être
